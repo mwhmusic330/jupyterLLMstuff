@@ -35,24 +35,22 @@ def llm_params():
     
     return chat_model
 
-def ai_messages(chat_model):
+def ai_messages(chat_model, prompt):
     messages = [
         SystemMessage(content="You're a helpful assistant"),
-        HumanMessage(
-            content=input("Hey man, whatcha need?\n")
-        ),
+        HumanMessage(content=prompt),
     ]
 
     ai_msg = chat_model.invoke(messages)
 
-    print(ai_msg.content)
+    return ai_msg.content
 
 
 
 def main():
     keyfunc = key(path)
-    modelparams = llm_params()
-    messageparams = ai_messages(modelparams)
+    model = llm_params()
+    messageparams = ai_messages(model)
 
 if __name__ == '__main__':
     main()
