@@ -7,6 +7,7 @@ from langchain_core.messages import (
 
 path="/home/michael/hugginfacestuff/token2"
 
+
 def key(path):
     with open(path, 'r') as f: 
         apikey = f.read().strip()
@@ -35,12 +36,7 @@ def llm_params():
     
     return chat_model
 
-def ai_messages(chat_model, prompt):
-    messages = [
-        SystemMessage(content="You're a helpful assistant"),
-        HumanMessage(content=prompt),
-    ]
-
+def ai_messages(chat_model, messages):
     ai_msg = chat_model.invoke(messages)
 
     return ai_msg.content

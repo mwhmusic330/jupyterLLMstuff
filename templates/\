@@ -6,10 +6,9 @@
 	<body>
 			
 		<h1>Whatcha need?!</h1>
-		<form action="/" method="post">
+		<form action="post_field" method="post">
 			<input name="prompt">
 			<input type="submit" value="ask">
-		<h2>{{response}}<h2>
 		</form>
 	</body>
 </html>
